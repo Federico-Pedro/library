@@ -1,0 +1,39 @@
+*{
+    border:  solid black 1px;;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body  {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    display: flex;
+}
+
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 100vh;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+#card-container{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.card{
+    border: 1px solid red;
+    height: 200px;
+    width: 150px;
+}
