@@ -63,17 +63,47 @@ function createCard(){
   card.appendChild(cardLang);
   const cardRead = document.createElement("div");
   if (myLibrary[i].read){
-  cardRead.innerText = "Already read";
-} else {
+    cardRead.innerText = "Already read";
+      } else {
     cardRead.innerText = "Still unread";
-  }
+    }
   card.appendChild(cardRead);
+  
+  
+  //REMOVE BUTTON
+  const removeButton = document.createElement("button");
+  removeButton.classList.add("removeButton");
+  removeButton.innerText = "Remove";
+  card.appendChild(removeButton);
+  removeButton.addEventListener('click', function(){
+    myLibrary.splice(i, 1);
+    clearContainer();
+    createCard();
+  }  );  
+
+  //TOGGLE BETWEEN READ/UNREAD
+  const readButton = document.createElement("button");
+  readButton.classList.add("readButton");
+  readButton.innerText = "Read/Unread";
+  card.appendChild(readButton);
+
+  readButton.addEventListener('click', function(){
+    if (cardRead.innerText === "Already read") {
+      cardRead.innerText = "Still unread"
+    } else {
+      cardRead.innerText = "Already read"
+    };
+  })
+
   cardContainer.appendChild(card); 
   }
-  
-  };
+    };
 
-  //Empty Container
+  
+
+
+
+  //EMPTY CONTAINER
 function clearContainer(){
   cardContainer.innerHTML = '';
 }
