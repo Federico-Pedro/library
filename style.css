@@ -1,39 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&display=swap');
+
+
+:root {
+    --font: rgb(91, 50, 0);
+    --border: rgba(153, 84, 0, 0.661);
+    --input: rgb(255, 255, 255, 0.3);
+    --shadow: rgb(0, 0, 0);
+  }
+
+
+
 *{
-    border:  solid black 1px;;
+    /*border:  solid black 1px; */
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    overflow: hidden;
+    /*overflow: unset;*/
+    overflow-x: hidden;
+    
 }
 
 body  {
     display: flex;
     flex-direction: column;
+    background-image: url(./background.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.title{
+    width: 100vw;
+    background-image: url(./background.jpg);
+    height: 15vh;
+    padding: 5px;
+    font-size: 3rem;
+    font-family: "Playwrite AR", cursive;
+    border-bottom: 2px solid var(--border);
+    color: var(--font);
+    position: fixed;
+    z-index: 1;
 }
 
 .main-container {
     display: flex;
+    border-top: 2px solid var(--border);
+    
+    
 }
 
 .side-bar {
     display: flex;
     flex-direction: column;
-    width: 25vw;
+    width: 26vw;
     height: 100vh;
+    border-right: 2px solid var(--border);
+    position: fixed;
+    top: 15vh;
+    
+    
 }
 
+.side-bar-title{
+    padding: 5px;
+    font-size: 1.5rem;
+    font-family: "Playwrite AR", cursive;
+    color: var(--font);
+}
 .form {
     display: flex;
     flex-direction: column;
 }
 
+
+fieldset{
+    border: none;
+    overflow: hidden;
+}
+label, legend {
+    width: auto;
+    font-size: 1.35rem;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding: 5px;
+    color: var(--font);
+}
+
+fieldset label{
+    margin-left: 50px;
+       
+}
+
+.form div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 3rem;
+
+}
+
+input {
+    height: 2rem;
+    font-size: 1.2rem;
+    font-family: "Playwrite AR", cursive;
+    border-radius: 10px;
+    background-color: var(--input);
+    border: none;
+    box-shadow:inset 2px 2px 5px var(--shadow);
+}
+
+input:focus{
+    outline: none;
+    border:var(--border) solid 1px;
+}
+
+input:hover{
+    border:var(--border) solid 1px;
+}
+
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: var(--input);
+    margin: 0;
+    width: 1.25em;
+    height: 1.25em;
+    border: 0.15em solid var(--border);
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+  }
+
+  input[type="checkbox"]:hover {
+    background-color: var(--font);
+  }
+
+  input[type="checkbox"]:checked{
+    background-color: var(--font);
+    box-shadow: none;
+}
+
+input[type="checkbox"]:checked:hover{
+    background-color: var(--input);
+}
+
+form button{
+    margin: 20px;
+    width: 75%;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: var(--font);
+    border: none;
+    box-shadow: 5px 5px 5px var(--shadow);
+    align-self: center;
+    color:rgb(255, 255, 255, 0.3);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+form button:hover{
+    cursor: pointer;
+}
+
+
 #card-container{
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
+    padding: 50px;
+    width: 74vw;
+    position: absolute;
+    left: 26vw;
+    top: 15vh;
+    
+    
 
 }
 .card{
     border: 1px solid red;
     height: 200px;
     width: 200px;
+    margin: 20px;
 }
