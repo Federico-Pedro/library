@@ -6,7 +6,8 @@
     --border: rgba(153, 84, 0, 0.661);
     --input: rgb(255, 255, 255, 0.3);
     --shadow: rgb(0, 0, 0);
-  }
+    --card-font: rgb(206, 206, 206);
+}
 
 
 
@@ -53,7 +54,7 @@ body  {
 .side-bar {
     display: flex;
     flex-direction: column;
-    width: 26vw;
+    width: 28vw;
     height: 100vh;
     border-right: 2px solid var(--border);
     position: fixed;
@@ -108,6 +109,8 @@ input {
     background-color: var(--input);
     border: none;
     box-shadow:inset 2px 2px 5px var(--shadow);
+    padding: 5px;
+    
 }
 
 input:focus{
@@ -153,7 +156,7 @@ form button{
     border: none;
     box-shadow: 5px 5px 5px var(--shadow);
     align-self: center;
-    color:rgb(255, 255, 255, 0.3);
+    color:var(--card-font);
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5rem;
     font-weight: bold;
@@ -163,23 +166,104 @@ form button:hover{
     cursor: pointer;
 }
 
+.logo{
+    margin-bottom: 5px;
+    height: 50%;
+    display: grid;
+    grid-template-columns: 1fr;
+    
+}
+
+.logo img{
+    width: 30%;
+    height:auto;
+    align-self: center;
+    justify-self: center;
+    
+    
+}
 
 #card-container{
     display: flex;
-    justify-content: space-between;
+    justify-content:flex-start;
     flex-wrap: wrap;
     padding: 50px;
-    width: 74vw;
+    width: 72vw;
     position: absolute;
-    left: 26vw;
+    left: 28vw;
     top: 15vh;
     
     
 
 }
 .card{
-    border: 1px solid red;
-    height: 200px;
-    width: 200px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px var(--shadow);
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.25rem;
+    color: var(--card-font);
+    font-weight: normal;
+    height: 260px;
+    width: 260px;
     margin: 20px;
+    background-color: rgba(116, 83, 25, 0.448);
+    overflow: hidden;
+}
+
+.card-cathegory{
+    display: flex;
+}
+.bold{
+    color: var(--card-font);
+    font-weight: bold;
+    margin-right: 5px;
+    font-size: 1.35rem;
+}
+
+.unread{
+    color: rgb(196, 0, 0);
+    font-weight: 200;
+    text-align: right;
+}
+
+.alreadyRead{
+    color: var(--card-font);
+    font-weight: 200;
+    text-align: right;
+}
+
+.card div{
+    margin-top: 7px;
+}
+
+.read{
+    margin-top: 10px;
+    text-align: right;
+}
+.card button{
+    margin-top: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 45%;
+    height: 1.5rem;
+    border-radius: 10px;
+    background-color: var(--font);
+    border: none;
+    box-shadow: 5px 5px 5px var(--shadow);
+    /*align-self: center;*/
+    color:var(--card-font);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.card button:focus{
+    outline: none;
+}
+
+.card button:hover{
+    cursor: pointer;
 }
